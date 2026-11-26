@@ -79,3 +79,7 @@ Tambahkan `build/NotchProto.app` di **System Settings → General → Login Item
 | `scripts/make-icon.swift` | Menggambar ikon app |
 
 Nama internal app dan bundle masih `NotchProto`, nama awal saat prototipe.
+
+## Lisensi
+
+[MIT](LICENSE)
