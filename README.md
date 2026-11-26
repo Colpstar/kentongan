@@ -18,9 +18,10 @@ Dulu kentongan dipakai di kampung untuk memberi kabar. Yang ini tugasnya sama, h
 
 ## Kebutuhan
 
-- Dibuat dan dicoba di **macOS 13 Ventura pada iMac Intel**. Versi macOS dan Mac lain belum dicoba.
+- macOS 13 atau lebih baru, Mac **Intel maupun Apple Silicon** (build universal).
+- Baru dicoba di **macOS 13 Ventura pada iMac Intel**. Bagian Apple Silicon berhasil di-build tetapi belum pernah dijalankan, dan versi macOS lain belum dicoba.
 - Command Line Tools (`xcode-select --install`). Xcode tidak diperlukan.
-- `build.sh` menghasilkan app untuk Intel (`x86_64`).
+- Di MacBook yang punya notch, ukuran dan posisi pulau belum disesuaikan.
 
 ## Build dan jalankan
 
@@ -47,6 +48,10 @@ Tanpa sertifikat, app ditandatangani secara ad-hoc dan izin Accessibility bisa h
 ### Nyala otomatis saat login
 
 Tambahkan `build/NotchProto.app` di **System Settings → General → Login Items**.
+
+### Memakai app hasil build di Mac lain
+
+App ini tidak dinotarisasi Apple, jadi jika disalin dari Mac lain, macOS akan menahannya saat pertama dibuka. Cara paling bersih adalah menjalankan `./build.sh` langsung di Mac tersebut.
 
 ## Privasi
 

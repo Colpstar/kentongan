@@ -6,7 +6,13 @@ APP=build/NotchProto.app
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp Resources/AppIcon.icns "$APP/Contents/Resources/"
 cp Info.plist "$APP/Contents/Info.plist"
-swiftc -O -target x86_64-apple-macos13.0 -o "$APP/Contents/MacOS/NotchProto" Sources/*.swift
+# Universal binary: one slice for Intel, one for Apple Silicon, joined with lipo.
+SLICES=$(mktemp -d)
+trap 'rm -rf "$SLICES"' EXIT
+for ARCH in x86_64 arm64; do
+  swiftc -O -target "$ARCH-apple-macos13.0" -o "$SLICES/$ARCH" Sources/*.swift
+done
+lipo -create "$SLICES/x86_64" "$SLICES/arm64" -output "$APP/Contents/MacOS/NotchProto"
 # A fixed signing identity keeps the Accessibility permission across rebuilds.
 IDENTITY="NotchProto Local Signing"
 if security find-certificate -c "$IDENTITY" >/dev/null 2>&1; then
