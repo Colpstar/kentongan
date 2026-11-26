@@ -6,6 +6,12 @@
 
 <p align="center">Notch buatan untuk Mac tanpa notch: notifikasi dan musik nongol dari tengah atas layar.</p>
 
+<p align="center">
+  <img src="assets/demo.gif" alt="Demo: notifikasi dan pemutar musik muncul dari tengah atas layar" width="780">
+</p>
+
+<p align="center"><sub>Dirender dari tampilan app dengan data contoh, bukan rekaman layar. Blur aslinya mengikuti isi di belakang jendela.</sub></p>
+
 Dulu kentongan dipakai di kampung untuk memberi kabar. Yang ini tugasnya sama, hanya saja digantung di atas layar Mac.
 
 ## Fitur
@@ -82,6 +88,7 @@ App ini tidak dinotarisasi Apple, jadi jika disalin dari Mac lain, macOS akan me
 | `Sources/SourceApp.swift` | Mengenali aplikasi dan ikonnya |
 | `Sources/NowPlaying.swift` | Info dan kontrol musik |
 | `scripts/make-icon.swift` | Menggambar ikon app |
+| `scripts/make-demo.sh` | Membuat ulang GIF demo |
 
 Nama internal app dan bundle masih `NotchProto`, nama awal saat prototipe.
 
